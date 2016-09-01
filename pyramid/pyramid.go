@@ -7,15 +7,31 @@ import(
 )
 
 
-func pyramid(base string) string {
+func pyramid(pyramid string) string {
 
-	length := len(base)
+	length := len(pyramid)
 
 	if length < 3 {
 	return "Error: Need at least 3 args"
 	}
 
-	return base
+
+	for i := 0; i < 10; i++ {
+
+		new_level := switchandremove(pyramid)
+
+		if len(new_level) < 2 {
+		return pyramid
+		} else {
+
+		new_level += "\n"
+		new_level += pyramid
+		pyramid = new_level
+		}
+
+	}
+
+	return pyramid
 }
 
 
@@ -61,5 +77,5 @@ func switchandremove(level string) string{
 
 func main() {
 	base := "/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\"
-	fmt.Println(switchandremove(base))
+	fmt.Println(pyramid(base))
 }
