@@ -1,10 +1,6 @@
 package main
 
-import(
-
-	"fmt"
-	"strings"
-)
+import "fmt"
 
 
 func pyramid(pyramid string) string {
@@ -16,9 +12,11 @@ func pyramid(pyramid string) string {
 	}
 
 
-	for i := 0; i < 10; i++ {
+	state := pyramid
+	for {
 
-		new_level := switchandremove(pyramid)
+		new_level := switchandremove(state)
+		state = new_level
 
 		if len(new_level) < 2 {
 		return pyramid
@@ -33,20 +31,6 @@ func pyramid(pyramid string) string {
 
 	return pyramid
 }
-
-
-
-
-
-func cut_space(level string) string {
-
-	cutted := strings.TrimSpace(level)
-	return cutted
-}
-
-
-
-
 
 func switchandremove(level string) string{
 
@@ -76,6 +60,6 @@ func switchandremove(level string) string{
 
 
 func main() {
-	base := "/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\"
+	base := "/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\/\\"
 	fmt.Println(pyramid(base))
 }
