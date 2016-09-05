@@ -7,6 +7,7 @@ func pyramid(pyramid string) string {
 
 	white_space := " "
 	state := pyramid
+
 	for i := 0; i < len(pyramid); i++{
 
 		buffer := ""
