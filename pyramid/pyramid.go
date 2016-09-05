@@ -5,10 +5,6 @@ import "fmt"
 
 func pyramid(pyramid string) string {
 
-	if len(pyramid) < 3 {
-	return "Error: Need at least 3 args"
-	}
-
 	white_space := " "
 	state := pyramid
 	for i := 0; i < len(pyramid); i++{
@@ -38,9 +34,7 @@ func pyramid(pyramid string) string {
 
 func switchandremove(level string) string{
 
-	level_byte := []byte(level)
-	level_slice := []byte(level[1:len(level_byte)-1])
-//	level_slice := []byte(remove_edge(level))
+	level_slice := []byte(level[1:len(level)-1])
 
 	for i := 0 ; i < len(level_slice); i++{
 
