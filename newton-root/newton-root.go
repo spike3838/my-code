@@ -11,8 +11,8 @@ func Sqrt(x float64) (float64, int){
 
 	for step - z != 0{
 
-	count++
-	if count > 100{ return z, count}
+		count++
+		if count > 100{ return z, count}
 
 		z = newtons(x, z)
 		step = newtons(x, z)
