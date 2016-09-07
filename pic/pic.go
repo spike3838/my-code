@@ -17,3 +17,6 @@ func Pic(dx, dy int) [][]uint8 {
 func main() {
 	pic.Show(Pic)
 }
+
+/* ./pic > test; cat test | base64 -d > test.png to decode. But you have to remove the 'IMAGE:' tag before piping to base64*/
+
