@@ -18,5 +18,5 @@ func main() {
 	pic.Show(Pic)
 }
 
-/* ./pic > test; cat test | base64 -d > test.png to decode. But you have to remove the 'IMAGE:' tag before piping to base64*/
+/* ./pic > test; sed 's/^.\{6\}//' test > tag_removed; cat tag_removed| base64 -d > test.png*/
 
